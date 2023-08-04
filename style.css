@@ -74,6 +74,7 @@
 
 ///////////////////////////////////////////////////////////// */
 .intro {
+  box-sizing: border-box;
   max-width: 80%;
   color: #fff;
   font-family: Inter, Arial, sans-serif;
@@ -91,10 +92,12 @@
 }
 
 .intro__quote {
+  box-sizing: border-box;
   margin: 0 0 10px;
   padding: 0;
   font-size: 24px;
   line-height: 1.41;
+  max-width: 720px;
 }
 .intro__quote::before {
   content: "";
@@ -114,8 +117,16 @@
   padding: 0;
   font-size: 16px;
   line-height: 1.63;
+  max-width: 720px;
 }
+
+/* /////////////////////////////////////////////////////////
+
+  PHOTO=GRID
+
+///////////////////////////////////////////////////////////// */
 .photo-grid {
+  box-sizing: border-box;
   max-width: 1184px;
   width: 100%;
   margin: 0 auto 92px;
@@ -124,4 +135,99 @@
   grid-template-rows: repeat(2, 213px);
   gap: 16px;
   justify-content: center;
+}
+
+/* /////////////////////////////////////////////////////////
+
+  PLACES
+
+///////////////////////////////////////////////////////////// */
+.places {
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  row-gap: 80px;
+}
+
+.place {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-areas:
+    "title artist"
+    "image text"
+    "button text";
+  grid-template-columns: minmax(auto, 460px) 49.19%;
+  grid-template-rows: auto auto max-content;
+  column-gap: 40px;
+  row-gap: 48px;
+}
+.place__title {
+  grid-area: title;
+  margin: 0;
+  padding: 0;
+  font-size: 72px;
+  font-weight: 900;
+  line-height: 1.05; /* 76px */
+}
+.place__website {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  row-gap: 8px;
+  max-width: max-content;
+}
+.place__url-heading {
+  grid-area: url-heading;
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: 1.44px;
+  text-transform: uppercase;
+  color: #aaa;
+}
+.place__artist {
+  grid-area: artist;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.22; /* 22px */
+}
+.place__image {
+  grid-area: image;
+  margin: 0;
+  padding: 0;
+}
+.place__description {
+  grid-area: text;
+  display: flex;
+  flex-flow: column nowrap;
+  row-gap: 25px;
+}
+.place__paragraph {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.63;
+}
+.place__button {
+  box-sizing: border-box;
+  grid-area: button;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.22;
+  padding: 13px 15px;
+  max-width: 248px;
+  min-height: 22px;
+  /* max-height: 22px; */
+
+  border-radius: 4px;
+  background: #0278fe;
+  color: #fff;
 }
